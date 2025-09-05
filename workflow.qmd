@@ -1,0 +1,537 @@
+---
+format: clean-revealjs
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+author:
+  - name: Your Name
+    orcid: 0000-0000-0000-0000
+    email: alias@email.com
+    affiliations: Your Institution
+date: last-modified
+execute: 
+  eval: true
+  echo: false
+---
+
+[Productive Workflow]{style="font-size: 2em;"}\
+[*An Introduction to Git and GitHub*]{style="font-size: 1.25em; color: steelblue; margin-top: -0.5in;"}
+
+<hr style="width: 77%; text-align: left; margin-left: 0; border: 1px solid black;">
+
+:::::: columns
+::: column
+**Luc Clair**\
+[***l.clair\@uwinnipeg.ca***]{style="font-size:0.75em;"}\
+[University of Winnipeg]{style="font-size:0.75em;"}
+
+September 8, 2025
+:::
+
+:::: column
+::: nostretch
+:::
+::::
+::::::
+
+## Preliminaries
+
+-   The necessary software to follow this lecture are
+    -   [R](https://www.r-project.org/)
+    -   [RStudio](https://www.rstudio.com/products/rstudio/download/preview/)
+    -   [Git](https://git-scm.com/downloads)
+    -   Created an account on [GitHub](https://github.com/)
+    -   [GitHub Desktop](https://desktop.github.com/download/)
+
+# Introduction
+
+## What is a Workflow?
+
+-   Structured sequence of steps, tasks, and decisions that guide how a project moves from start to finish
+
+::: incremental
+-   A good workflow is organized, repeatable, and transparent
+    -   Helps reduce errors
+    -   Makes work reproducible and easier to follow
+:::
+
+
+## Workflow Example: Applied Economic Research
+
+&nbsp;
+
+![](workflow.png){fig-align="center"}
+
+## Version Control
+
+-   Version control software (VCS) is a system that helps people manage and track changes to their files over time (e.g., text documents and code files)
+
+> -   It keeps track of every modification made to files, who made those changes, and when they were made
+
+> -   Changes can be reverted, previous versions of files can be restored, and conflicts between different versions can be resolved
+
+# Git and Github
+
+## Git
+
+![](images/fig_1.png){width="80%" fig-align="center"}
+
+## What is Git?
+
+-   Git is a popular VCS
+
+> -   Allows multiple collaborators to work on the same project simultaneously, manage changes, and share work effectively
+> -   Git’s greatest strength is its facilitation of collaboration
+> -   It has been described as “track changes on steroids” or as “a marriage between Dropbox and Microsoft Word’s ‘Track Changes’ feature”
+
+## Git Repository
+
+-   Git tracks the changes of a set files in a Git enabled folder or **directory**
+
+> -   The Git enabled directory is known as a **repository** (repo)
+
+> -   One uses Git to flag any saved changes made to files in the repository
+
+## Git Repository (cont'd)
+
+![](images/fig_2.png){fig-align="center"}
+
+## Changes and Checkpoints
+
+-   Git can then save a version (snapshot) of repository files at a given moment in time
+
+> -   This is known as a **commit**
+
+> -   Each commit has a message explaining what was changed, keeping track of the project’s progress
+
+## Branches
+
+-   Git allows you to create **branches**, which are akin to an alternate version of the repository to experiment with new ideas
+
+> -   Once you’re happy with the changes, you can **merge** these branches back into the main project
+
+> -   A branch is a separate line of development
+
+> -   The main branch is usually called main or master
+
+## Collaboration
+
+-   You can store your repository on a remote server (e.g., GitHub) and everyone can access it
+
+> -   When someone makes changes, you can **pull** those changes into your local repository (folder on your computer)
+
+> -   Similarly, when you make changes, you can push them to the remote server so your team can see and use them
+
+## Track and Undo Changes
+
+-   Git tracks every change you make
+
+> -   If you realize you made a mistake or want to revisit an earlier version of your work, you can easily go back to previous commits
+
+> -   This helps ensure you don’t lose valuable work and can always correct errors
+
+## GitHub
+
+-   GitHub is a web-based platform that helps researchers manage, share, and collaborate on code projects using Git
+
+> -   It provides a cloud-based space where you can store your Git repositories and interact with other developers’ projects
+
+> -   GitHub has become one of the most popular platforms for open-source and private software development 
+
+## Git and Workflow
+
+- Version control is a critical component of a productive workflow
+
+:::{.incremental}
+- A recommended first-step of any workflow is to set up a Git-enabled repository for your project files and link this repository to [GitHub.com](GitHub.com)
+
+:::
+
+# Creating a Git Repository
+
+## Creating a Git Repository
+
+- Three main ways
+    
+    >1. Create repository on [GitHub.com](GitHub.com)
+    >2. Add new repository using GitHub Desktop
+    >3. Create a new folder on your local computer and enable Git
+
+## Create Git Repository on GitHub
+
+1.  Go to [github.com](github.com) and sign in
+
+> -   On your home page, click the ![](images/fig_3.png) button
+
+## Create Git Repository on GitHub (cont'd)
+
+2.  Enter the name of the repository
+
+![](images/fig_4.png){fig-align="center"}
+
+## Create Git Repository on GitHub (cont'd)
+
+3.  Choose whether you want the repository to be public or private
+
+![](images/fig_4a.png){fig-align="center"}
+
+## Create Git Repository on GitHub (cont'd)
+
+4.  Add a README file, which gives a description of your project
+
+![](images/fig_4b.png){fig-align="center"}
+
+## Create Git Repository on GitHub (cont'd)
+
+5.  Choose a license, then press **Create**
+    - For more on open source licensing, please visit [ChooseALicense.com](choosealicense.com)
+
+![](images/fig_4c.png){fig-align="center"}
+
+## Create Git Repository on GitHub (cont'd)
+
+-   Your repository has been created
+
+:::{.incremental}
+
+- Here are a few things to notice
+
+:::
+
+![](images/fig_5.png){fig-align="center"}
+
+## Create Git Repository on GitHub (cont'd)
+
+- Git defaults to the `main` branch
+
+![](images/fig_5a.png){fig-align="center"}
+
+## Create Git Repository on GitHub (cont'd)
+
+- The commit message and commit ID
+
+![](images/fig_5b.png){fig-align="center"}
+
+## Create Git Repository on GitHub (cont'd)
+
+- Two files were created: LICENSE and README.md
+
+> - Note the files created have the same Git message
+
+![](images/fig_5c.png){fig-align="center"}
+
+## Create Git Repository on GitHub (cont'd)
+
+- LICENSE refers to the license chosen when creating the repository
+
+![](images/fig_5d.png){fig-align="center"}
+
+## Create Git Repository on GitHub (cont'd)
+
+- README.md is the landing page for your repository
+
+> - It is where you describe your repository 
+
+![](images/fig_5e.png){fig-align="center"}
+
+## Clone GitHub Repository in GitHub Desktop
+
+- Open GitHub Desktop and log in (if you are currently logged out)
+
+![](images/fig_43.png){fig-align="center" width="75%"}
+
+## Clone GitHub Repository in GitHub Desktop (cont'd)
+
+- On the left-hand-side, you will notice a list of your GitHub repositories
+
+> - Choose the repository you wish to make a copy to your local computer
+> - Then select "Clone **username/repo**", where **username/repo** is your GitHub username and repo is the name of the repository
+> - In this example it is **clairl/demo**
+
+## Clone GitHub Repository in GitHub Desktop (cont'd)
+
+- Choose the location for the clone of the GitHub repo on your local computer and click **Clone**
+
+![](images/fig_44.png){fig-align="center"}
+
+## Clone GitHub Repository in GitHub Desktop (cont'd)
+
+![](images/fig_45.png){fig-align="center"}
+
+## Create a Git Repository from Existing Folder
+
+- Say we already have a folder with files that we want to connect to GitHub?
+
+> - First, we have to enable Git
+
+> - To do this, we have to use the Terminal 
+
+## Create a Git Repository from Existing Folder (cont.)
+
+- In the terminal, navigate to the project folder
+
+## Create a Git Repository from Existing Folder (cont.)
+
+- Use the following commands:
+
+```terminal
+git init
+git add .
+```
+
+> - The first command enables git, while the second command stages files for the next commit
+
+> - The `.` means "the current directory and all its contents"
+
+# Application: Creating a Webstie Using Quarto and GitHub Pages
+
+## Workflow
+
+-   The workflow we will be using to create our website is:
+    -   Create a new Quarto project in R Studio
+    -   Connect our project directory to GitHub through Github Desktop
+    -   Publish the newly created website via GitHub Pages
+    -   Create new pages for the website
+    -   Add a blog to the website
+    -   Customize the website
+
+# R Projects
+
+## R Projects
+
+-   To begin, create a new Quarto project in R Studio
+    -   Click *File-\>New Project...*
+
+![ ](screenshots/fig1.png)
+
+## R Projects (cont.)
+
+-   Select *New Directory*
+
+![ ](screenshots/fig2.png){width="50%"}
+
+## R Projects (cont.)
+
+-   Select *Quarto Website*
+
+![ ](screenshots/fig3.png){width="50%"}
+
+## R Projects (cont.)
+
+-   Name the directory. I named mine **demo**.
+-   Choose a path for the new project and click *Create Project*
+
+![ ](screenshots/fig4.png){width="50%"}
+
+## Quarto Website Files
+
+-   R Studio creates a project with a number of files
+
+![ ](screenshots/fig5.png){width="50%"}
+
+## Quarto Website Files (cont.)
+
+-   **\_quarto.yml**: key configuration file for the Quarto website.
+    -   Defines the overall structure and settings for the website project, `project:`
+    -   Defines metadata for the website, e.g., title, author(s), and other descriptive info, `title:` and `description:`
+    -   Controls the structure of the website, `navbar:`
+    -   Specifies themes, `format:`, `theme:`, `css:`
+
+## Quarto Website Files (cont.)
+
+-   **index.qmd**: home page of your Quarto website
+    -   Defines the content and layout for the main landing page of the site
+    -   Can add Markdown and Quarto-specific content
+    -   Defined as *Home* in the **\_quarto.yml** file
+-   **.gitignore**: configuration file used in Git repositories to specify intentionally untracked files or directories that Git should ignore.
+
+## Quarto Website Files (cont.)
+
+-   **about.qmd**: Quarto Markdown file that is typically used to create an *About* page for a Quarto website.
+    -   This page provides information about the website's purpose, the author(s), or the organization behind it.
+    -   Not mandatory
+    -   Appears as another page on the navigation bar
+-   **style.css**: Cascading Style Sheets (CSS) file used to define and customize the visual appearance of a Quarto website or document.
+    -   allows you to override or extend the default styles provided by Quarto's themes
+
+## Building the Website
+
+-   To build the website, click the *Render* button at the top of the **index.qmd** file.
+
+-   Alternatively, you can also click *Build*, then *Render Website* in the top right pane.
+
+## Building the Website (cont.)
+
+![ ](screenshots/fig6.png){width="50%"}
+
+# Connecting R Project to GitHub
+
+## Connecting R Project to GitHub
+
+-   Before we can publish our website, we need to connect our R project to a GitHub repository
+
+-   Be sure that you are signed into your GitHub account in GitHub Desktop.
+
+-   Open GitHub Desktop and add the R project Directory
+
+    -   Select *Add Existing Repository*
+    -   Choose the R project directory
+
+## Connecting R Project to GitHub (cont.)
+
+::: {layout="[50,50]"}
+![ ](screenshots/fig9.png){width="500px"}
+
+![ ](screenshots/fig10.png){width="500px"}
+:::
+
+## Connecting R Project to GitHub (cont.)
+
+-   Commit changes
+    -   Write a summary (E.g., "Created Quarto website")
+
+![ ](screenshots/fig11.png){width="50%"}
+
+## Connecting R Project to GitHub (cont.)
+
+-   Publish repository to [GitHub.com](github.com)
+
+![ ](screenshots/fig12.png){width="50%"}
+
+## Connecting R Project to GitHub (cont.)
+
+-   Go to [GitHub.com](github.com) to confirm that the repository has been published.
+
+![ ](screenshots/fig13.png){width="50%"}
+
+## Connecting R Project to GitHub (cont.)
+
+-   Check to see that the project files are now available in your repository
+
+![ ](screenshots/fig14.png){width="50%"}
+
+# Publishing Your Website
+
+## Publishing Your Website
+
+-   Return to R Studio and open the **\_quarto.yml** file.
+-   Under `project:` include the code `output-dir: docs` and render the website. This will save the website files in a newly created **docs** folder.
+
+![ ](screenshots/fig15.png){width="50%"}
+
+## Publishing Your Website (cont.)
+
+-   We no longer need the **\_site** folder, so we can delete it.
+
+![ ](screenshots/fig16.png){width="50%"}
+
+## Publishing Your Website (cont.)
+
+-   Return to GitHub Desktop, commit the changes, and push them to [GitHub.com](github.com).
+    -   Remember to leave a summary
+
+![ ](screenshots/fig18.png){width="50%"}
+
+## Publishing Your Website (cont.)
+
+-   Return to [GitHub.com](github.com).
+    -   Note that the **docs** folder has replaced the **\_site** folder.
+
+![ ](screenshots/fig19.png){width="50%"}
+
+## GitHub Pages
+
+-   Click *Settings* from the top menu.
+
+![ ](screenshots/fig19a.png){width="50%"}
+
+## GitHub Pages (cont.)
+
+-   Choose *Pages* from the menu on the left-hand-side
+
+![ ](screenshots/fig20.png){width="50%"}
+
+## GitHub Pages (cont.)
+
+-   Set the branch to **main**
+
+![ ](screenshots/fig21.png){width="50%"}
+
+## GitHub Pages (cont.)
+
+-   Set the folder to **docs**
+
+![ ](screenshots/fig22.png){width="50%"}
+
+## GitHub Pages (cont.)
+
+-   Note the message saying that the website is being built
+
+![ ](screenshots/fig23.png){width="50%"}
+
+## GitHub Pages (cont.)
+
+-   Wait a about a minute, then refresh the page. You should see a message that the site is live at a given URL.
+    -   The URL is typically *https://username.github.io/repository_name*
+
+![ ](screenshots/fig24.png){width="50%"}
+
+## Publishing Your Website (cont.)
+
+-   Follow the link to view your website
+
+![ ](screenshots/fig25.png){width="50%"}
+
+# Adding Pages to Your Website
+
+## Adding Pages to Your Website
+
+-   To add a webpage, create a new **.qmd** file and save it in your project directory.
+
+::: {layout="[50,50]"}
+![ ](screenshots/fig47.png){width="50%"}
+
+![ ](screenshots/fig48.png){width="50%"}
+:::
+
+## Adding Pages to Your Website (cont.)
+
+![ ](screenshots/fig49.png){width="50%"}
+
+## Adding Pages to Your Website (cont.)
+
+-   Add the new Quarto file to the navigation bar in the **\_quarto.yml** file
+    -   `href:` adds the listing page file to the navigation bar
+    -   `text:` is the text that will display on the navigation bar.
+
+![ ](screenshots/fig50.png){width="50%"}
+
+## Adding Pages to Your Website (cont.)
+
+![ ](screenshots/fig55.png){width="50%"}
+
+# Add File to a Webpage
+
+## Add File to a Webpage
+
+-   You may want to include downloadable file formats on your website
+-   Add the file to your project directory and reference it within your Quarto document.
+-   It is helpful to create sub directories to store your files,e.g.,
+    -   Figures: store figures
+    -   Data: datasets
+    -   Files: pdf documents
+
+## Add File to a Webpage (cont.)
+
+-   Reference the file using the syntax `![text](files/filename.pdf)`
+-   E.g.,
+
+![ ](screenshots/fig52.png){width="50%"}
+
+## Add File to a Webpage (cont.)
+
+::: {layout="[50,50]"}
+![ ](screenshots/fig53.png){width="50%"}
+
+![ ](screenshots/fig54.png){width="50%"}
+:::
