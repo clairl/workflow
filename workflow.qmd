@@ -30,6 +30,9 @@ September 8, 2025
 
 :::: column
 ::: nostretch
+
+![](images/adobe-express-qr-code-2.png){width=50%}
+
 :::
 ::::
 ::::::
